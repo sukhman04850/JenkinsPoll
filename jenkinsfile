@@ -69,7 +69,7 @@ steps {
 script{
 sh 'docker stop PollTrial '
  sh'docker rm PollTrial'
-    sh "docker run -d --name PollTrial -p 1020:80 ${IMAGE_NAME}:${IMAGE_TAG}"
+    sh "docker run -d --name PollTrial -p 1020:8080 ${IMAGE_NAME}:${IMAGE_TAG}"
 }
 
 }
