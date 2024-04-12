@@ -68,7 +68,7 @@ steps {
 
 script{
 sh 'docker rm -f ${IMAGE_NAME} || true '
-    sh "docker run -d --name PollTrial -p 8000:80 ${IMAGE_NAME}:${IMAGE_TAG}"
+    sh "docker run -d --name PollTrial -p 1020:80 ${IMAGE_NAME}:${IMAGE_TAG}"
 }
 
 }
