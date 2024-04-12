@@ -1,0 +1,6 @@
+@JenkinsTrial_HostAddress = http://localhost:5143
+
+GET {{JenkinsTrial_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
