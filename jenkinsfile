@@ -4,9 +4,9 @@ agent any
 
 environment {
 
-    IMAGE_NAME='ssk1811/PollImage'
+    IMAGE_NAME='ssk1811/pollimage'
 
-    IMAGE_TAG='1'
+    IMAGE_TAG='latest'
 
 }
 stages {
