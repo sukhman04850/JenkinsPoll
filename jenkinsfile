@@ -4,9 +4,9 @@ agent any
 
 environment {
 
-    IMAGE_NAME='ssk1811/jenkinstrial'
+    IMAGE_NAME='ssk1811/PollImage'
 
-    IMAGE_TAG='latest'
+    IMAGE_TAG='1'
 
 }
 stages {
@@ -17,7 +17,7 @@ steps {
 
 
 checkout scm
-//git 'https://github.com/sukhman04850/JenkinsTrial.git'
+
 
 }
 
