@@ -44,6 +44,17 @@ docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
 }
 }
 }
+stage('SonarQube Analysis') {
+    steps {
+        script {
+            def scannerHome = tool 'SonarQubeScanner'
+            withSonarQubeEnv('sq1') {
+                sh "${scannerHome}/bin/sonar-scanner"
+            }
+        }
+    }
+}
+
 
 stage('Docker Push'){
 
