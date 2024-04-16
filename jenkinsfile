@@ -85,7 +85,7 @@ stage('Run container') {
 steps {
 
 script{
-    def existingContainer = docker.inspects("PollTrial")
+    def existingContainer = docker.inspect("PollTrial")
     if(existingContainer!=null){
        sh 'docker stop PollTrial '
  sh'docker rm PollTrial'
