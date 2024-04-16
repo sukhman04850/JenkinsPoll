@@ -56,14 +56,7 @@ stage('SonarQube Analysis') {
 stage('Docker Build'){
 steps{
 script{
- // Remove existing image if it exists
-                    def existingImage = docker.image("${IMAGE_NAME}:${IMAGE_TAG}")
-                    if (existingImage.exists()) {
-                        existingImage.remove()
-                    }
-
-                    // Build new Docker image
-                    docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
+docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
 }
 }
 }
