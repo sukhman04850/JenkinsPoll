@@ -56,7 +56,14 @@ stage('SonarQube Analysis') {
 stage('Docker Build'){
 steps{
 script{
-docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
+ // Remove existing image if it exists
+                    def existingImage = docker.image("${IMAGE_NAME}:${IMAGE_TAG}")
+                    if (existingImage.exists()) {
+                        existingImage.remove()
+                    }
+
+                    // Build new Docker image
+                    docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
 }
 }
 }
@@ -87,6 +94,7 @@ steps {
 script{
 sh 'docker stop PollTrial '
  sh'docker rm PollTrial'
+
     sh "docker run -d --name PollTrial -p 1020:8080 ${IMAGE_NAME}:${IMAGE_TAG}"
 }
 
